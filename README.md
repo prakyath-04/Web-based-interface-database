@@ -9,7 +9,7 @@ Create the procedures in the database by running the procedures.SQL script.
 
 Change the settings.py file to connect to the database on your local machine.
 
-Make migrations before running the server.
+Make migrations before running the server. 
 
 You can run the server by running the following command:
 `python manage.py runserver`
