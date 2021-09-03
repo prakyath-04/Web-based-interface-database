@@ -1,0 +1,73 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Personal Details {%endblock%}
+
+
+{% block content %}
+  <h3>Update Customer Record</h3>
+    <form method = "POST" action="/upd_cust_db/{{PmCustmr.cid}}">
+    {% csrf_token %}
+    <table border="1">
+        <tr>
+            <td>Customer ID</td>
+            <td><input type ="text" name="cid" value ="{{PmCustmr.cid}}" readonly></td>
+        </tr>
+        <tr>
+            <td>First name</td>
+            <td><input type ="text" name="fname" value ="{{PmCustmr.fname}}"></td>
+        </tr>
+             <tr>
+            <td>Middle name</td>
+            <td><input type ="text" name="mname" value ="{{PmCustmr.mname}}"></td>
+        </tr>
+             <tr>
+            <td>Last name</td>
+            <td><input type ="text" name="lname" value ="{{PmCustmr.lname}}"></td>
+        </tr>
+
+             <tr>
+            <td>Street name</td>
+            <td><input type ="text" name="street" value ="{{PmCustmr.street}}"></td>
+        </tr>
+            <tr>
+            <td>House Number</td>
+            <td><input type ="number" name="h_no" value ="{{PmCustmr.h_no}}"></td>
+        </tr>
+             <tr>
+            <td>Apartment number</td>
+            <td><input type ="text" name="apt_no" value ="{{PmCustmr.apt_no}}"></td>
+        </tr>
+             <tr>
+            <td>City</td>
+            <td><input type ="text" name="city" value ="{{PmCustmr.city}}"></td>
+        </tr>
+            <tr>
+            <td>State</td>
+            <td><input type ="text" name="state" value ="{{PmCustmr.state}}"></td>
+        </tr>
+             <tr>
+            <td>Contry</td>
+            <td><input type ="text" name="country" value ="{{PmCustmr.country}}"></td>
+        </tr>
+            <tr>
+            <td>zip</td>
+            <td><input type ="number" name="zip" value ="{{PmCustmr.zip}}"></td>
+        </tr>
+             <tr>
+            <td>Gender</td>
+            <td><input type ="text" name="gender" value ="{{PmCustmr.gender}}"></td>
+
+        </tr>
+        <tr>
+            <td>Marital Status</td>
+            <td><input type ="text" name="mart_status" value ="{{PmCustmr.mart_status}}"></td>
+    </table>
+    <input type="submit" value="Update"/>
+    </form>
+<!--        {% if CustomerRecord %}-->
+<!--            <p>{{CustomerRecord}}</p>-->
+<!--        {% else %}-->
+<!--        {% endif %}-->
+
+{% endblock %}

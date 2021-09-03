@@ -1,0 +1,18 @@
+<!--Navbar-->
+<div>
+  {% url 'home' as index_url %}
+  <span>{% if request.path == index_url %} Home {% else %} <a href = "{{ index_url }}">Home</a> {% endif %}</span>
+
+  {% if user.is_authenticated %}
+      {% url 'logout' as logout_url %}
+       <span style="float:right">{% if request.path == logout_url %} Logout {% else %} <a href = "{{ logout_url }}">Logout</a> {% endif %}</span>
+    <div style="text-align: center;"><span align ='center'>  Hi {{user.username}}!</span></div>
+
+  {% else %}
+    {% url 'register' as register_url %}
+    <span style="float:right">{% if request.path == register_url %} Signup {% else %} <a href = "{{ register_url }}">Signup</a> {% endif %}</span>
+    {% url 'login' as login_url %}
+    <span style="float:right">{% if request.path == login_url %} Login {% else %} <a href = "{{ login_url }}">Login </a> &nbsp;{% endif %}</span>
+
+  {% endif %}
+</div>

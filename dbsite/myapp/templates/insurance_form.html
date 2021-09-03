@@ -1,0 +1,28 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Insurance {%endblock%}
+{% block content %}
+  <h3>Please provide us the insurance details. If you wish to have both home and auto insurance, please fill this form again</h3>
+
+<!--    <hr>-->
+     <form method = "POST">
+         {% csrf_token %}
+         Customer ID : <input type="number" name="cid" required="required"/><br/>
+         Please select your Insurance type :<br/>
+         <input type="radio" id="Auto" name="insurance_type" value="A">
+         <label for="Auto">Auto</label>
+         <input type="radio" id="Home" name="insurance_type" value="H">
+         <label for="Home">Home</label><br/>
+         Preferred End Date : <input type="date" name="enddate" required="required"/><br/>
+         Preferred Premium : <input type="number" name="premium"  required="required"/><br/>
+         <input type="submit" value ="Submit"/><br/>
+<!--         {% if messages %}-->
+<!--         {% for displaydata in messages %}-->
+<!--         <h3 style = "color: blue;">{{displaydata}} </h3>-->
+<!--         {% endfor %}-->
+<!--         {% endif %}-->
+     </form>
+<!--    </hr>-->
+
+{% endblock %}

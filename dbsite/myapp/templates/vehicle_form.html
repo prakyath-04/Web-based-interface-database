@@ -1,0 +1,49 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Vehicle Form {%endblock%}
+<!--<style>-->
+<!--.container {-->
+<!--  width: 500px;-->
+<!--  clear: both;-->
+<!--}-->
+
+<!--.container input {-->
+<!--  width: 100%;-->
+<!--  clear: both;-->
+<!--}-->
+<!--</style>-->
+{% block content %}
+  <h3>Please provide us the details for the vehicle that is being insured.</h3>
+      <h4>Please ensure that you have entered your personal details and the insurance form before you fill out this form </h4>
+
+<!--    <hr>-->
+<!--    <div class="container">-->
+     <form method = "POST">
+         {% csrf_token %}
+
+         VIN : <input type="number" name="vin" placeholder="Enter the Vehicle Identification Number" required="required"/><br/>
+         Vehicle Make : <input type="text" name="vmake" required="required"/><br/>
+         Model : <input type="text" name="vmodel" required="required"/><br/>
+         Year of the Model : <input type="number" name="model_yr" placeholder="Enter the model year in YYYY format" required="required"/><br/>
+         Please select the status :<br/>
+         <input type="radio" id="Leased" name="status" value="L">
+         <label for="Leased">Leased</label>
+         <input type="radio" id="Financed" name="status" value="F">
+         <label for="Financed">Financed</label>
+         <input type="radio" id="Owned" name="status" value="O">
+         <label for="Owned">Owned</label><br/>
+         Insurance Number : <input type="number" name="ins_no" placeholder="Enter insurance number" required="required"/><br/>
+
+         <input type="submit" value ="Submit"/><br/>
+
+<!--         {% if messages %}-->
+<!--         {% for displaydata in messages %}-->
+<!--         <h3 style = "color: blue;">{{displaydata}} </h3>-->
+<!--         {% endfor %}-->
+<!--         {% endif %}-->
+     </form>
+<!--    </div>-->
+<!--    </hr>-->
+
+{% endblock %}

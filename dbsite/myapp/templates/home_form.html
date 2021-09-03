@@ -1,0 +1,68 @@
+
+{% extends 'header.html' %}
+
+{%block title %} Home Form {%endblock%}
+
+{% block content %}
+
+<h3>Please provide us the details of the house being insured</h3>
+      <h4>Please ensure that you have entered your personal details and the insurance form before you fill out this form </h4>
+
+    <hr>
+     <form method = "POST">
+         {% csrf_token %}
+         Purchase Date : <input type="date" name="pur_date" required="required"/><br/>
+         Purchase Value : <input type="number" name="pur_value"  required="required"/><br/>
+         Area : <input type="number" name="area" required="required"/><br/>
+
+         Please select your Home type :<br/>
+         <input type="radio" id="Single Family" name="htype" value="S">
+         <label for="Single Family">Single Family</label>
+         <input type="radio" id="Multi Family" name="htype" value="M">
+         <label for="Multi Family">Multi Family</label>
+         <input type="radio" id="Condominium" name="htype" value="C">
+         <label for="Condominium">Condominium</label>
+         <input type="radio" id="Town house" name="htype" value="T">
+         <label for="Town house">Town house</label><br/>
+
+         Please tell us if the house has a fire detection system :<br/>
+         <input type="radio" id="Yes" name="auto_fire_n" value="1">
+         <label for="Yes">Yes</label>
+         <input type="radio" id="No" name="auto_fire_n" value="0">
+         <label for="No">No</label><br/>
+
+         Please tell us if the house has a security system :<br/>
+         <input type="radio" id="Yes" name="home_security" value="1">
+         <label for="Yes">Yes</label>
+         <input type="radio" id="No" name="home_security" value="0">
+         <label for="No">No</label><br/>
+
+         Please tell us if the house has a basement:<br/>
+         <input type="radio" id="Yes" name="basement" value="1">
+         <label for="Yes">Yes</label>
+         <input type="radio" id="No" name="basement" value="0">
+         <label for="No">No</label><br/>
+
+         Please tell us the type of swimming pool at the house (If any) :<br/>
+         <input type="radio" id="Underground" name="swim_pool" value="U">
+         <label for="Underground">Underground</label>
+         <input type="radio" id="Overground" name="swim_pool" value="O">
+         <label for="Overground">Overground</label>
+         <input type="radio" id="Indoor" name="swim_pool" value="I">
+         <label for="Indoor">Indoor</label>
+         <input type="radio" id="Multiple" name="swim_pool" value="M">
+         <label for="Multiple">Multiple</label><br/>
+
+         Insurance Number : <input type="number" name="ins_no" required="required"/><br/>
+
+         <input type="submit" value ="Submit"/><br/>
+<!--        -->
+<!--         {% if messages %}-->
+<!--         {% for displaydata in messages %}-->
+<!--         <h3 style = "color: blue;">{{displaydata}} </h3>-->
+<!--         {% endfor %}-->
+<!--         {% endif %}-->
+     </form>
+    </hr>
+
+{% endblock %}

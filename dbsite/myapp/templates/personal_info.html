@@ -1,0 +1,52 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Personal Details {%endblock%}
+
+.container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+{% block content %}
+  <h3>Please fill in your personal details. This information will be used for the insurance documentation </h3>
+<!--    <hr>-->
+<!--    <div class="container">-->
+     <form method = "POST">
+         {% csrf_token %}
+         First name : <input type="text" name="firstname"  required="required"/><br/>
+         Middle Name : <input type="text" name="middlename"/><br/>
+         Last name : <input type="text" name="lastname"  required="required"/><br/>
+         Street name : <input type="text" name= "street"  required="required"/><br/>
+         House number : <input type="number" name= "house_no"  required="required"/><br/>
+         Apt Number : <input type="text" name= "apt_no" /><br/>
+         City: <input type="text" name= "city"  required="required"/><br/>
+         State : <input type="text" name= "state"  required="required"/><br/>
+         Country : <input type="text" name= "country"  required="required"/><br/>
+         Zip : <input type="number" name= "zip"  required="required"/><br/>
+         Please select your Gender:<br/>
+         <input type="radio" id="male" name="gender" value="M">
+         <label for="male">Male</label>
+         <input type="radio" id="female" name="gender" value="F">
+         <label for="female">female</label><br/>
+         Please select your Marital Status:<br/>
+         <input type="radio" id="single" name="mart_status" value="S">
+         <label for="single">Single</label>
+         <input type="radio" id="married" name="mart_status" value="M">
+         <label for="married">Married</label><br/>
+
+         <input type="submit" value ="Submit"/><br/>
+<!--         {% if messages %}-->
+<!--         {% for displaydata in messages %}-->
+<!--         <h3 style = "color: blue;">{{displaydata}} </h3>-->
+<!--         {% endfor %}-->
+<!--         {% endif %}-->
+     </form>
+<!--    </div>-->
+<!--    </hr>-->
+
+{% endblock %}

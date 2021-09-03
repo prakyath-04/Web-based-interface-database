@@ -1,0 +1,36 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Personal Details {%endblock%}
+
+
+{% block content %}
+  <h3>Records in the Customer Database</h3>
+    <table border="1">
+        <tr>
+            <th>Insurance Number</th>
+            <th>Insurance Type</th>
+            <th>Status</th>
+            <th>Premium Amount</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Customer ID</th>
+        </tr>
+        {% for record_ in InsuranceRecord%}
+        <tr>
+            <td>{{record_.0}}</td>
+            <td>{{record_.1}}</td>
+            <td>{{record_.2}}</td>
+            <td>{{record_.3}}</td>
+            <td>{{record_.4}}</td>
+            <td>{{record_.5}}</td>
+            <td>{{record_.6}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+<!--        {% if CustomerRecord %}-->
+<!--            <p>{{CustomerRecord}}</p>-->
+<!--        {% else %}-->
+<!--        {% endif %}-->
+
+{% endblock %}

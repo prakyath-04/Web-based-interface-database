@@ -1,0 +1,45 @@
+<!-- templates/base.html -->
+{% extends 'header.html' %}
+    {%block title %} Home {%endblock%}
+
+        {%block content%}
+    <h1 style="text-align:center;color:blue">
+            We do secure
+    </h1 >
+
+    <main>
+        {% if user.is_authenticated %}
+        <h2 style="text-align:center">Welcome to We Do secure(WDS) life and auto insurance homepage. </h2>
+        <h3 style="text-align:center;color:Purple"> You can do the following:</h3>
+        <p align="center">
+        Enter Personal Details: <a href="cust_info"> Profile Settings</a><br/>
+        Fill the Insurance Details: <a href="ins_form"> Insurance Form</a><br/>
+        Fill the Vehicle Details for Auto Insurance: <a href="vform"> Add Vehicle</a><br/>
+        Fill the Driver Details: <a href="dform"> Add Driver</a><br/>
+        Fill the House Details: <a href="hform"> Add Home</a><br/>
+            Get your Customer ID : <a href="cust_rec"> My ID</a><br/>
+            Get your Insurance Number: <a href="ins_rec"> My insurance Number</a><br/>
+            Update Personal Details: <a href="upd_cust"> Update Profile</a><br/>
+            Delete Profile: <a href="del_cust"> Delete Profile</a><br/>
+            View Invoices for an Insurance: <a href="inv"> Invoice</a><br/>
+
+            {% if user.is_superuser %}
+            Show all Customer Records in the DB:  <a href="all_cust"> Customer Records</a><br/>
+            Show all Insurance Records in the DB:  <a href="all_ins"> Insurance Records</a><br/>
+
+            {% else %}
+            {% endif %}
+
+        </p>
+        {% else%}
+         <h2 style="text-align:center">Welcome to We Do secure(WDS) life and auto insurance homepage. </h2>
+        We are an insurance company, and we provide all kinds of insurance starting from life and home to car insurances.
+        Join our insurance plans to get the best insurance policy at the best rates.
+
+        If your existing customer and want to edit details, please continue to our login page.
+
+        If you are a new customer, please do register for the website to provide details and one
+        of our agents will contact you soon.
+        {%endif%}
+    </main>
+        {%endblock%}

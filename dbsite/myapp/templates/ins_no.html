@@ -1,0 +1,24 @@
+
+
+{% extends 'header.html' %}
+{%block title %} Name Form {%endblock%}
+
+{% block content %}
+  <h3>Please Enter your Insurance Number to get details of invoice</h3>
+<!--    <hr>-->
+<!--    <div class="container">-->
+     <form method = "POST">
+         {% csrf_token %}
+         Insurance number : <input type="text" name="ins_no"  required="required"/><br/>
+
+         <input type="submit" value ="Submit"/><br/>
+<!--         {% if messages %}-->
+<!--         {% for displaydata in messages %}-->
+<!--         <h3 style = "color: blue;">{{displaydata}} </h3>-->
+<!--         {% endfor %}-->
+<!--         {% endif %}-->
+     </form>
+<!--    </div>-->
+<!--    </hr>-->
+
+{% endblock %}
